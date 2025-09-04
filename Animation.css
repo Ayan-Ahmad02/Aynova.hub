@@ -1,0 +1,113 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #141414;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container */
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: #222;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+/* Pages */
+.page {
+  position: absolute;
+  width: 100%;
+  max-width: 400px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  background-color: #333;
+  color: #eee;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+input[type="email"]:focus,
+input[type="password"]:focus {
+  background-color: #444;
+}
+
+/* Buttons */
+button {
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 12px 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #f40612;
+}
+
+/* Error message */
+.error-msg {
+  color: #f44336;
+  font-weight: 600;
+  margin-top: 10px;
+  min-height: 1.2em;
+}
+
+/* Fade animations */
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; visibility: visible; }
+  to { opacity: 1; }
+}

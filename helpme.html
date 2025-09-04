@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aynova Project Help Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a; /* deep black */
+    color: #f5f5f5;
+  }
+
+  .chat-message {
+    animation: slideIn 0.5s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .typing-indicator {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 60px;
+  }
+  .typing-indicator.show {
+    display: block;
+  }
+
+  .bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #d4af37; /* gold */
+  }
+
+  .quick-question-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #111111; /* rich black */
+    border: 2px solid #d4af37; /* gold */
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    color: #f0d98c; /* soft gold text */
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s, color 0.2s, border-color 0.2s;
+  }
+  .quick-question-button:hover {
+    background-color: #d4af37; /* gold */
+    color: #111111; /* black text on hover */
+    transform: translateY(-2px);
+    border-color: #f5e6a6; /* lighter gold */
+  }
+
+  .quick-questions {
+    margin-top: 20px;
+    display: none;
+  }
+  .quick-questions.show {
+    display: block;
+  }
+
+  /* Bot messages */
+  .bg-blue-100 {
+    background-color: #1c1c1c !important; /* dark grey */
+    color: #f0d98c !important; /* gold */
+    border-left: 3px solid #d4af37;
+  }
+  .dark .bg-blue-900 {
+    background-color: #000000 !important;
+    color: #f5e6a6 !important; /* light gold */
+  }
+
+  /* User messages */
+  .bg-green-100 {
+    background: linear-gradient(135deg, #d4af37, #f5e6a6) !important; /* gold gradient */
+    color: #111111 !important; /* black text */
+    font-weight: 600;
+  }
+  .dark .bg-green-900 {
+    background-color: #0a0a0a !important;
+    color: #f0d98c !important;
+  }
+
+  /* Input & button */
+  input#message-input {
+    background-color: #111111;
+    border: 2px solid #d4af37;
+    color: #f5e6a6;
+  }
+  input#message-input::placeholder {
+    color: #d4af37;
+  }
+  input#message-input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #d4af37;
+    border-color: #f5e6a6;
+  }
+
+  button#send-button {
+    background: linear-gradient(135deg, #d4af37, #b8860b); /* gold gradient */
+    color: #111111;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 6px 12px;
+    transition: 0.3s;
+  }
+  button#send-button:hover {
+    background: linear-gradient(135deg, #f5e6a6, #d4af37);
+    transform: scale(1.05);
+  }
+
+  footer p {
+    color: #d4af37;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body class="bg-black dark:bg-black text-red-400 transition-colors duration-500">
+  <div class="max-w-4xl mx-auto p-4">
+    <header class="text-center mb-6">
+      <h1 class="text-4xl font-bold mb-2 text-red-500">Aynova Project Help Center</h1>
+      <p class="text-lg text-red-300">
+        Get instant answers to your questions about subscriptions, features, and more. Chat with our AI assistant!
+      </p>
+      <img
+        src="https://placehold.co/800x200/7f1d1d/fee2e2?text=Aynova+Project+Branding"
+        alt="Wide creative banner showcasing the Aynova Project logo with vibrant abstract waves in red and black tones representing innovation and connectivity"
+        class="rounded-lg shadow-lg mt-4 mx-auto w-full max-w-2xl"
+      />
+    </header>
+
+    <div class="bg-black rounded-lg shadow-lg p-6 mb-6 chat-container border-2 border-red-600">
+      <div
+        id="chat-messages"
+        class="h-96 overflow-y-auto p-4 border-b border-red-700"
+      >
+        <!-- Bot initial message with quick questions -->
+        <div class="flex items-start mb-4">
+          <img
+            src="https://placehold.co/40x40/7f1d1d/fee2e2?text=AI"
+            alt="Friendly AI assistant avatar with a red circular design and a smiling face icon in white"
+            class="bot-avatar"
+          />
+          <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg chat-message">
+            <p>
+              Hello! I'm your Aynova AI Assistant. How can I help you today? Ask
+              about subscriptions, features, or support. Select a question below
+              or type your own!
+            </p>
+          </div>
+        </div>
+        <div id="quick-questions" class="quick-questions show">
+          <button
+            class="quick-question-button"
+            data-question="What are the subscription plans?"
+          >
+            What are the subscription plans?
+          </button>
+          <button
+            class="quick-question-button"
+            data-question="What features does Aynova offer?"
+          >
+            What features does Aynova offer?
+          </button>
+          <button
+            class="quick-question-button"
+            data-question="How can I contact support?"
+          >
+            How can I contact support?
+          </button>
+          <button class="quick-question-button" data-question="What is the pricing?">
+            What is the pricing?
+          </button>
+          <button
+            class="quick-question-button"
+            data-question="How to cancel or get a refund?"
+          >
+            How to cancel or get a refund?
+          </button>
+          <button class="quick-question-button" data-question="Can I try a demo?">
+            Can I try a demo?
+          </button>
+          <button class="quick-question-button" data-question="customer care">
+            Contact aynova service center
+            </button>
+        </div>
+      </div>
+      <div class="typing-indicator" id="typing">
+        <div class="flex items-center">
+          <img
+            src="https://placehold.co/40x40/7f1d1d/fee2e2?text=AI"
+            alt="Friendly AI assistant avatar with a red circular design and a smiling face icon in white"
+            class="bot-avatar"
+          />
+          <div class="bg-gray-200 dark:bg-gray-700 p-3 rounded-lg">
+            <span class="flex space-x-1">
+              <span class="w-2 h-2 bg-red-700 rounded-full animate-ping"></span>
+              <span
+                class="w-2 h-2 bg-red-700 rounded-full animate-ping animation-delay-100"
+              ></span>
+              <span
+                class="w-2 h-2 bg-red-700 rounded-full animate-ping animation-delay-200"
+              ></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Type your question here..."
+          class="flex-1 p-3 border border-red-600 rounded-l-lg bg-black text-red-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+        />
+        <button
+          id="send-button"
+          class="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-r-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition-colors"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+<button 
+  onclick="window.open('../index.html');" 
+  style="
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    color: #111111;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+    transition: all 0.3s ease;
+  "
+  onmouseover="this.style.background='linear-gradient(135deg, #f5e6a6, #d4af37)'; this.style.color='#000'; this.style.transform='translateY(-3px) scale(1.05)'; this.style.boxShadow='0 0 15px rgba(212, 175, 55, 0.8)';"
+  onmouseout="this.style.background='linear-gradient(135deg, #d4af37, #b8860b)'; this.style.color='#111111'; this.style.transform='scale(1)'; this.style.boxShadow='0 0 8px rgba(212, 175, 55, 0.5)';"
+>
+  ← Back to Home
+</button>
+    <footer class="text-center">
+      <p class="text-red-700 font-semibold">
+        Powered by Aynova AI. For more help, visit our official site.
+      </p>
+    </footer>
+  </div>
+
+ <script>
+  const chatMessages = document.getElementById('chat-messages');
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+  const typing = document.getElementById('typing');
+  const quickQuestions = document.getElementById('quick-questions');
+
+  const qaPairs = [
+    {
+      keywords: ['subscription', 'subscribe', 'plan'],
+      response:
+        'Our subscription plans start from $9.99/month, including premium features like 24/7 support and unlimited access. You can upgrade anytime!',
+    },
+    {
+      keywords: ['features', 'what can i do'],
+      response:
+        'Aynova offers AI-powered analytics, real-time collaboration tools, and customizable dashboards to enhance your productivity.',
+    },
+    {
+      keywords: ['support', 'help', 'contact'],
+      response:
+        "Reach out via email at support@aynova.com or our chat support. We're here 24/7!",
+    },
+    {
+      keywords: ['pricing', 'cost'],
+      response:
+        'Basic plan: $0.33/mo. Pro: $1.13/mo. Enterprise: Custom pricing. All include a free trial.',
+    },
+    {
+      keywords: ['refund', 'cancel'],
+      response:
+        'You can cancel anytime from your account settings. Refunds are processed within 7 days for eligible plans.',
+    },
+    {
+      keywords: ['demo', 'try'],
+      response:
+        "Sign up for a free demo at aynova.com/demo. It's quick and insightful!",
+    },
+    {
+        keywords: ['customer care', 'contact aynova service center'],
+        response: 
+        "For any queries, please contact us at 📞 8791898194 or email us at 📧 chaudharyayan100@gmail.com"
+    }
+  ];
+
+  let interactionCount = 0;
+
+  function appendMessage(sender, message, isBot = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'flex items-start mb-4 chat-message';
+    if (isBot) {
+      messageDiv.innerHTML = `
+        <img src="https://placehold.co/40x40/7f1d1d/fee2e2?text=AI" alt="AI Assistant" class="bot-avatar" />
+        <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">${message}</div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg ml-auto">${message}</div>
+      `;
+    }
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function showTyping() {
+    typing.classList.add('show');
+  }
+
+  function hideTyping() {
+    typing.classList.remove('show');
+  }
+
+  function getBotResponse(userMessage) {
+    const lowerMessage = userMessage.toLowerCase();
+    for (const pair of qaPairs) {
+      if (pair.keywords.some((keyword) => lowerMessage.includes(keyword))) {
+        return pair.response;
+      }
+    }
+    return "I'm sorry, I didn't understand that. Please ask about subscriptions, features, or support.";
+  }
+
+  // Speak text function
+  function speakText(text) {
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    utterance.rate = 1;
+    utterance.pitch = 1;
+    speechSynthesis.speak(utterance);
+  }
+
+  // Process question with speech
+  function processQuestion(userMessage) {
+    appendMessage('user', userMessage);
+    showTyping();
+
+    setTimeout(() => {
+      hideTyping();
+      const botResponse = getBotResponse(userMessage);
+      appendMessage('bot', botResponse, true);
+      speakText(botResponse); // Speak the response
+      interactionCount++;
+      if (interactionCount >= 3) {
+        setTimeout(() => {
+          const thanks = 'Thank you for chatting with me! If you have more questions, feel free to ask anytime.';
+          appendMessage('bot', thanks, true);
+          speakText(thanks);
+          quickQuestions.classList.remove('show');
+        }, 1000);
+      }
+    }, 1500);
+  }
+
+  function sendMessage() {
+    const userMessage = messageInput.value.trim();
+    if (!userMessage) return;
+    processQuestion(userMessage);
+    messageInput.value = '';
+  }
+
+  sendButton.addEventListener('click', sendMessage);
+  messageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+  });
+
+  // Quick question buttons
+  quickQuestions.addEventListener('click', (e) => {
+    if (e.target.classList.contains('quick-question-button')) {
+      const question = e.target.getAttribute('data-question');
+      processQuestion(question);
+      quickQuestions.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

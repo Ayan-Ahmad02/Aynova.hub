@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aynova Project - Team, Websites & Feedback</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .team-card {
+      background: #f7f9fc;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform: scale(0);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .team-card:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+    @keyframes fadeInUp {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+    }
+    .team-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+    }
+    .team-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px;
+      border: 4px solid #667eea;
+      box-shadow: 0 0 15px rgba(102,126,234,0.5);
+      transition: box-shadow 0.3s ease;
+    }
+    .team-card:hover .team-img {
+      box-shadow: 0 0 25px #764ba2;
+    }
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+    .team-role {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .team-about {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.3;
+      min-height: 3rem;
+    }
+    /* Websites Section */
+    .websites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .website-card {
+      background: #f0f4ff;
+      border-radius: 15px;
+      padding: 15px 20px;
+      box-shadow: 0 3px 12px rgba(102,126,234,0.3);
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      transform: translateX(-100px);
+      opacity: 0;
+      animation: slideInLeft 0.8s forwards;
+    }
+    .website-card:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+    @keyframes slideInLeft {
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .website-card:hover {
+      background-color: #dbe4ff;
+      transform: translateY(-5px);
+    }
+    .website-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #2c3e50;
+      word-break: break-word;
+    }
+    .website-role {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .website-link {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #667eea;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+    /* Feedback Section */
+    .feedback-section {
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+    }
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .feedback-form input[type="text"],
+    .feedback-form textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .star-rating {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .star {
+      font-size: 2.2rem;
+      color: #ccc;
+      transition: color 0.3s, transform 0.2s;
+      /* user-select: none; */
+    }
+    .star:hover {
+      transform: scale(1.2);
+    }
+    .star.selected,
+    .star.hovered {
+      color: #fbbf24; /* amber-400 */
+    }
+    button.submit-btn {
+      background-color: #667eea;
+      color: white;
+      border: none;
+      padding: 14px 25px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      align-self: center;
+      width: 150px;
+    }
+    button.submit-btn:hover {
+      background-color: #5a6fd8;
+    }
+    .feedback-list {
+      border-top: 2px solid #667eea;
+      padding-top: 1rem;
+    }
+    .feedback-item {
+      border-bottom: 1px solid #ddd;
+      padding: 1rem 0;
+    }
+    .feedback-item:last-child {
+      border-bottom: none;
+    }
+    .feedback-item .stars {
+      color: #fbbf24;
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .feedback-item .comment {
+      font-size: 1rem;
+      white-space: pre-wrap;
+      color: #444;
+    }
+    .feedback-item .user {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-4xl mb-8">Aynova Project Team</h1>
+    <div class="team-grid" aria-label="Team members">
+      <!-- Team member cards -->
+      <div class="team-card" tabindex="0">
+        <img src="image/video/Ayan.jpg" alt="Ayan Ahmad, Founder and Leader of Aynova Project." class="team-img" />
+        <div class="team-name">Ayan Ahmad</div>
+        <div class="team-role">Founder & Leader</div>
+        <div class="team-about">Visionary leader overseeing project development. Drives innovation and strategic planning.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/MB.jpg" alt="Md Bashar, Animation Creator and Designer." class="team-img" />
+        <div class="team-name">Md Bashar</div>
+        <div class="team-role">Animation Creator & Designer</div>
+        <div class="team-about">Creates visual animations and handles design. Enhances user interface with creative elements.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/AS.jpg" alt="Aditya Shyam, Project Evaluator." class="team-img" />
+        <div class="team-name">Aditya Shyam</div>
+        <div class="team-role">Project Evaluator</div>
+        <div class="team-about">Evaluates project progress and provides feedback. Ensures quality and continuous improvement.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/PK.jpg" alt="Priyanshu Kumar, Helper and Support." class="team-img" />
+        <div class="team-name">Priyanshu Kumar</div>
+        <div class="team-role">Helper & Support</div>
+        <div class="team-about">Provides support and assistance in various tasks. Helps maintain project workflow.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/AN.jpg" alt="Aniket Kumar, Development Team member." class="team-img" />
+        <div class="team-name">Aniket Kumar</div>
+        <div class="team-role">Development Team</div>
+        <div class="team-about">Part of coding and debugging team. Contributes to core features.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/ASK.jpg" alt="Ashish Kumar, Developer." class="team-img" />
+        <div class="team-name">Ashish Kumar/Ayan Ahmad</div>
+        <div class="team-role">Developer</div>
+        <div class="team-about">Focuses on backend development work. Builds scalable systems.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/OUR TEAM.jpg" alt="Our Team, Collective contributors." class="team-img" />
+        <div class="team-name">Our Team</div>
+        <div class="team-role">Collective Team</div>
+        <div class="team-about">Group of collaborators handling multiple roles. Supports overall project execution.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/PM.jpg" alt="Payal Murya, Helper and Coordinator." class="team-img" />
+        <div class="team-name">Payal Murya</div>
+        <div class="team-role">Helper & Coordinator</div>
+        <div class="team-about">Coordinates project activities and provides assistance. Helps with task management.</div>
+      </div>
+
+      <div class="team-card" tabindex="0">
+        <img src="image/video/HB.jpg" alt="Harsh, Helper and Coordinator." class="team-img" />
+        <div class="team-name">Harsh</div>
+        <div class="team-role">Helper & Coordinator</div>
+        <div class="team-about">Assists in coordination and support roles. Contributes to smooth operations.</div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl mb-6">Websites Included in Aynova Project</h2>
+    <div class="websites-grid" aria-label="Websites used in Aynova project">
+      <!-- Each website card -->
+      <a href="https://net2025.cc/home?utm_source=home_page" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">NET 2025</div>
+        <div class="website-role">Educational Research Portal</div>
+        <div class="website-link">https://net2025.cc/home</div>
+      </a>
+
+      <a href="https://dsmru.up.nic.in/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">DSMNR University</div>
+        <div class="website-role">Official University Site</div>
+        <div class="website-link">https://dsmru.up.nic.in/</div>
+      </a>
+
+      <a href="https://dsmru.up.nic.in/main/User/placement.aspx" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">DSMRU Placement</div>
+        <div class="website-role">Placement Info</div>
+        <div class="website-link">https://dsmru.up.nic.in/main/User/placement.aspx</div>
+      </a>
+
+      <a href="https://dsmru.up.nic.in/main/User/admission_pro.aspx" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">DSMRU Admission</div>
+        <div class="website-role">Admission Process</div>
+        <div class="website-link">Admission Pro</div>
+      </a>
+
+      <a href="../Samarth.html" class="website-card">
+        <div class="website-name">Samarth</div>
+        <div class="website-role">Project Local Page</div>
+        <div class="website-link">Samarth.html</div>
+      </a>
+
+      <a href="https://gaana.com/genre/bollywood" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Gaana Bollywood</div>
+        <div class="website-role">Music Streaming Bollywood</div>
+        <div class="website-link">Gaana Bollywood</div>
+      </a>
+
+      <a href="https://gaana.com/playlist/rounakkesarkar-ddggx-top50hollywood" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Gaana Hollywood</div>
+        <div class="website-role">Top 50 Hollywood Playlist</div>
+        <div class="website-link">Gaana Playlist</div>
+      </a>
+
+      <a href="https://www.zedge.net/find/ringtones/musical" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Zedge Ringtones</div>
+        <div class="website-role">Ringtones & Wallpapers</div>
+        <div class="website-link">Zedge Musical</div>
+      </a>
+
+      <a href="https://www.nykaafashion.com" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Nykaa Fashion</div>
+        <div class="website-role">Fashion & Beauty Ecommerce</div>
+        <div class="website-link">Nykaa Fashion</div>
+      </a>
+
+      <a href="https://www.reliancedigital.in/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Reliance Digital</div>
+        <div class="website-role">Electronics Retail</div>
+        <div class="website-link">Reliance Digital</div>
+      </a>
+
+      <a href="https://decorsmantra.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Decors Mantra</div>
+        <div class="website-role">Home Decor</div>
+        <div class="website-link">Decors Mantra</div>
+      </a>
+
+      <a href="https://blinkit.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Blinkit</div>
+        <div class="website-role">Quick Grocery Delivery</div>
+        <div class="website-link">Blinkit</div>
+      </a>
+
+      <a href="https://www.swiggy.com/restaurants" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Swiggy</div>
+        <div class="website-role">Food Delivery</div>
+        <div class="website-link">Swiggy Restaurants</div>
+      </a>
+
+      <a href="https://www.expedia.co.in/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Expedia India</div>
+        <div class="website-role">Travel & Booking</div>
+        <div class="website-link">Expedia India</div>
+      </a>
+
+      <a href="https://www.99acres.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">99acres</div>
+        <div class="website-role">Real Estate Listings</div>
+        <div class="website-link">99acres</div>
+      </a>
+
+      <a href="https://www.magicbricks.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">MagicBricks</div>
+        <div class="website-role">Real Estate</div>
+        <div class="website-link">MagicBricks</div>
+      </a>
+
+      <a href="https://www.amazon.in/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Amazon India</div>
+        <div class="website-role">Ecommerce Giant</div>
+        <div class="website-link">Amazon India</div>
+      </a>
+
+      <a href="https://www.flipkart.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Flipkart</div>
+        <div class="website-role">Ecommerce Platform</div>
+        <div class="website-link">Flipkart</div>
+      </a>
+
+      <a href="https://www.spotify.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Spotify</div>
+        <div class="website-role">Music Streaming</div>
+        <div class="website-link">Spotify</div>
+      </a>
+
+      <a href="https://www.netflix.com/" target="_blank" rel="noopener" class="website-card">
+        <div class="website-name">Netflix</div>
+        <div class="website-role">OTT Streaming</div>
+        <div class="website-link">Netflix</div>
+      </a>
+    </div>
+
+    <h2 class="text-3xl mb-6">Share Your Feedback</h2>
+    <div class="feedback-section">
+      <form id="feedbackForm" class="feedback-form" novalidate>
+        <input type="text" id="userName" placeholder="Your Name" required aria-label="Your Name" />
+        <div class="star-rating" role="radiogroup" aria-label="Star rating">
+          <span class="star" data-value="1" role="radio" aria-checked="false" tabindex="0" aria-label="1 star">★</span>
+          <span class="star" data-value="2" role="radio" aria-checked="false" tabindex="-1" aria-label="2 stars">★</span>
+          <span class="star" data-value="3" role="radio" aria-checked="false" tabindex="-1" aria-label="3 stars">★</span>
+          <span class="star" data-value="4" role="radio" aria-checked="false" tabindex="-1" aria-label="4 stars">★</span>
+          <span class="star" data-value="5" role="radio" aria-checked="false" tabindex="-1" aria-label="5 stars">★</span>
+        </div>
+        <textarea id="userComment" placeholder="Write your feedback here..." required aria-label="Write your feedback"></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <div id="feedbackList" class="feedback-list" aria-live="polite" aria-relevant="additions">
+        <!-- User feedback will appear here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const stars = document.querySelectorAll('.star-rating .star');
+      let selectedRating = 0;
+
+      function updateStars(rating) {
+        stars.forEach((star, idx) => {
+          if (idx < rating) {
+            star.classList.add('selected');
+            star.setAttribute('aria-checked', 'true');
+            star.tabIndex = 0;
+          } else {
+            star.classList.remove('selected');
+            star.setAttribute('aria-checked', 'false');
+            star.tabIndex = -1;
+          }
+        });
+      }
+
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          selectedRating = parseInt(star.dataset.value);
+          updateStars(selectedRating);
+        });
+        star.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectedRating = parseInt(star.dataset.value);
+            updateStars(selectedRating);
+          }
+          if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            let next = star.nextElementSibling || stars[0];
+            next.focus();
+          }
+          if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            let prev = star.previousElementSibling || stars[stars.length - 1];
+            prev.focus();
+          }
+        });
+        star.addEventListener('mouseover', () => {
+          const hoverValue = parseInt(star.dataset.value);
+          stars.forEach((s, idx) => {
+            if (idx < hoverValue) s.classList.add('hovered');
+            else s.classList.remove('hovered');
+          });
+        });
+        star.addEventListener('mouseout', () => {
+          stars.forEach(s => s.classList.remove('hovered'));
+        });
+      });
+
+      const form = document.getElementById('feedbackForm');
+      const feedbackList = document.getElementById('feedbackList');
+
+      function createStarsDisplay(rating) {
+        let starsHTML = '';
+        for (let i = 1; i <= 5; i++) {
+          starsHTML += i <= rating ? '★' : '☆';
+        }
+        return starsHTML;
+      }
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('userName').value.trim();
+        const comment = document.getElementById('userComment').value.trim();
+
+        if (!name) {
+          alert('Please enter your name.');
+          return;
+        }
+        if (selectedRating === 0) {
+          alert('Please select a star rating.');
+          return;
+        }
+        if (!comment) {
+          alert('Please write your feedback.');
+          return;
+        }
+
+        const feedbackItem = document.createElement('div');
+        feedbackItem.classList.add('feedback-item');
+
+        const userNameElem = document.createElement('div');
+        userNameElem.className = 'user';
+        userNameElem.textContent = name;
+
+        const starsElem = document.createElement('div');
+        starsElem.className = 'stars';
+        starsElem.textContent = createStarsDisplay(selectedRating);
+
+        const commentElem = document.createElement('div');
+        commentElem.className = 'comment';
+        commentElem.textContent = comment;
+
+        feedbackItem.appendChild(userNameElem);
+        feedbackItem.appendChild(starsElem);
+        feedbackItem.appendChild(commentElem);
+
+        feedbackList.prepend(feedbackItem);
+
+        form.reset();
+        selectedRating = 0;
+        updateStars(0);
+      });
+    })();
+  </script>
+</body>
+</html>
+</content>
+</create_file>

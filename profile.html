@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-profile</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body style="text-align: center; display: flex; justify-content: center; align-items: center;">
+    <h1>Your Profile</h1>
+
+<div class="profile-photo-container">
+  <!-- Profile photo preview -->
+  <div id="profile-photo" class="profile-photo" style="background-image: url('https://www.shutterstock.com/image-vector/no-photo-available-vector-icon-260nw-2082597646.jpg');" aria-label="User  profile photo"></div>
+  
+  <!-- Upload button -->
+  <label for="photo-upload" class="file-input-label" tabindex="0">Change Profile Photo</label>
+  <input type="file" id="photo-upload" accept="image/*" aria-describedby="photo-upload-desc" style="display:none;">
+  <small id="photo-upload-desc" style="color:#bbb; font-size:0.8rem; margin-top:4px;">Supported formats: JPG, PNG, GIF</small>
+</div>
+
+<form id="profile-form" novalidate>
+  <label for="fullname">Full Name</label>
+  <input type="text" id="fullname" name="fullname" maxlength="50" required aria-describedby="fullname-desc" />
+  <small id="fullname-desc" style="color:#bbb; font-size:0.8rem;">Enter your full name</small>
+
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" maxlength="30" required aria-describedby="username-desc" />
+  <small id="username-desc" style="color:#bbb; font-size:0.8rem;">Max 30 characters</small>
+
+  <label for="email">Email (cannot be changed)</label>
+  <div class="info-text" id="email-display" aria-live="polite">user@example.com</div>
+
+  <fieldset aria-labelledby="gender-label" style="margin-top: 20px;">
+    <legend id="gender-label" style="font-weight:700;">Gender</legend>
+    <label><input type="radio" name="gender" value="male" required> Male</label>
+    <label><input type="radio" name="gender" value="female"> Female</label>
+    <label><input type="radio" name="gender" value="other"> Other</label>
+  </fieldset>
+
+  <label for="dob" style="margin-top: 20px;">Date of Birth</label>
+  <input type="date" id="dob" name="dob" required max="9999-12-31" />
+
+  <label for="age">Age</label>
+  <input type="number" id="age" name="age" min="0" max="120" placeholder="Your age" />
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" pattern="^\+?[0-9\s\-]{7,15}$" placeholder="+1234567890" aria-describedby="phone-desc" />
+  <small id="phone-desc" style="color:#bbb; font-size:0.8rem;">Include country code, e.g. +1 555 555 5555</small>
+
+  <label for="address">Address</label>
+  <textarea id="address" name="address" rows="3" maxlength="200" placeholder="Street address, P.O. box, etc."></textarea>
+
+  <label for="city">City</label>
+  <input type="text" id="city" name="city" maxlength="50" />
+
+  <label for="state">State / Province</label>
+  <input type="text" id="state" name="state" maxlength="50" />
+
+  <label for="zip">Zip / Postal Code</label>
+  <input type="text" id="zip" name="zip" maxlength="20" />
+
+  <label for="country">Country</label>
+  <select id="country" name="country" required>
+    <option value="" disabled selected>Select your country</option>
+    <option value="india">India</option>
+    <option value="usa">United States</option>
+    <option value="uk">United Kingdom</option>
+    <option value="canada">Canada</option>
+    <option value="australia">Australia</option>
+    <option value="other">Other</option>
+  </select>
+
+  <fieldset class="password-group" aria-labelledby="password-change-label" style="margin-top: 30px;">
+    <legend id="password-change-label" style="font-weight:700;">Change Password</legend>
+    <label for="current-password">Current Password</label>
+    <input type="password" id="current-password" name="current-password" placeholder="Current password" autocomplete="current-password" />
+    <label for="new-password">New Password</label>
+    <input type="password" id="new-password" name="new-password" placeholder="New password" autocomplete="new-password" />
+    <label for="confirm-password">Confirm New Password</label>
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password" autocomplete="new-password" />
+  </fieldset>
+
+  <button type="submit" style="margin-top: 30px;">Save Changes</button>
+<button class="logout-btn" id="logout-btn" aria-label="Logout from your account" onclick="window.open('profile.html','_blank')">Logout</button>
+<button class="logout-btn" id="add-account-btn" aria-label="Add another account" onclick="window.open('Account.html','_blank')">Add Another Account</button>
+</form>
+
+<script src="photo.js"></script>
+</body>
+</html>

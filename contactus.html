@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #141414;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .container {
+    background: #222;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-sizing: border-box;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  textarea {
+    min-height: 100px;
+  }
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: #e50914;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #f40612;
+  }
+  .status-message {
+    margin-top: 15px;
+    text-align: center;
+    min-height: 1.2em;
+  }
+  .status-success {
+    color: #4caf50;
+  }
+  .status-error {
+    color: #f44336;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <label for="user_name">Name</label>
+    <input type="text" id="user_name" name="user_name" required placeholder="Your name" />
+
+    <label for="user_email">Email</label>
+    <input type="email" id="user_email" name="user_email" required placeholder="you@example.com" />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+
+    <button type="submit">Send Message</button>
+    <div id="status" class="status-message" aria-live="polite"></div>
+  </form>
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init('njEntSWDzkZrCko0F'); // Replace with your EmailJS public key
+  })();
+
+  const form = document.getElementById('contact-form');
+  const statusDiv = document.getElementById('status');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    statusDiv.textContent = '';
+    statusDiv.className = 'status-message';
+
+    emailjs.sendForm('service_d6mshkk', 'template_ysa4wpb', this)
+      .then(() => {
+        statusDiv.textContent = 'Message sent successfully!';
+        statusDiv.classList.add('status-success');
+        form.reset();
+      }, (error) => {
+        statusDiv.textContent = 'Failed to send message. Please try again later.';
+        statusDiv.classList.add('status-error');
+        console.error('EmailJS error:', error);
+      });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Tablet & Mobile Responsive */
+@media (max-width: 768px) {
+/* Header */
+
+.hdr {
+position: sticky;
+flex-direction: row;
+align-items: center;
+padding: 10px;
+gap: 10px;
+}
+
+.hdr .logo img {
+width: 140px;
+height: 40px;
+margin-left: 20px;
+}
+
+/* Navbar collapses into hamburger */
+.nav_bar {
+flex-direction: row-reverse;
+gap: 12px;
+width: 100%;
+flex-direction: row;
+text-align: center;
+background: #111;
+padding: 15px 0;
+position: absolute;
+top: 110px;
+left: 0;
+}
+
+.nav_bar a {
+color: white;
+font-size: 15px;
+padding: 8px 0;
+text-decoration: none;
+}
+
+.nav_bar.active {
+display: flex;
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+display: block;
+cursor: pointer;
+font-size: 26px;
+color: white;
+position: absolute;
+top: 20px;
+right: 20px;
+}
+
+Search Bar 
+.search {
+width: 0%;
+display: flex; 
+justify-content: flex-start; 
+position: relative;
+margin-top:2px;
+}
+
+.search input {
+width: 40%;
+padding: 6px;
+font-size: 14px;
+}
+
+.searchb {
+padding: 6px 10px;
+font-size: 14px;
+}
+
+/* Settings dropdown  */
+.settings-container {
+position: relative;
+margin-top: 10px;
+margin-left: 20px;
+}
+
+.dropdown {
+position: absolute;
+top: 40px;
+right: 0;
+background: #111;
+display: none;
+flex-direction: column;
+width: 160px;
+}
+
+.dropdown a {
+padding: 10px;
+color: white;
+text-decoration: none;
+text-align: left;
+}
+
+.settings-container:hover .dropdown {
+display: flex;
+}
+
+/* Hero Section */
+.hero-title {
+font-size: 22px;
+text-align: center;
+}
+
+.hero-desc {
+font-size: 14px;
+padding: 0 12px;
+text-align: center;
+}
+
+.hero-buttons {
+flex-direction: column;
+gap: 8px;
+align-items: center;
+}
+
+/* Containers & Boxes */
+.container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 10px;
+}
+
+iframe {
+height: 160px;
+}
+
+/* Footer */
+.footer-content p {
+font-size: 13px;
+text-align: center;
+padding: 0 10px;
+}
+
+
+/* Mobile Specific - Below 480px */
+@media (max-width: 480px) {
+.hdr {
+gap: 5px;
+}
+
+.hdr .logo img {
+width: 120px;
+}
+
+.search input {
+width: 100%;
+margin-bottom: 8px;
+}
+
+.nav_bar a {
+font-size: 13px;
+opacity: 0.5;
+}
+
+.hero-title {
+font-size: 20px;
+}
+
+.hero-desc {
+font-size: 13px;
+}
+
+iframe {
+height: 140px;
+}
+
+.footer-content p {
+font-size: 12px;
+}
+}
+}

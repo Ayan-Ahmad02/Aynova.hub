@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration-page</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <!-- Register Page -->
+<div id="register-page" role="main" aria-label="Create account form">
+    <div class="container">
+    <h2>Create Your Aynova Account</h2>
+    <form id="register-form" novalidate>
+        <label for="register-email">Email address</label>
+        <input type="email" id="register-email" name="register-email" placeholder="you@example.com" required autocomplete="email" />
+        <label for="register-username">Username</label>
+        <input type="text" id="register-username" name="register-username" placeholder="Choose a username" required maxlength="30" />
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" name="register-password" placeholder="Create a password" required autocomplete="new-password" />
+        <label for="register-password-confirm">Confirm Password</label>
+        <input type="password" id="register-password-confirm" name="register-password-confirm" placeholder="Confirm your password" required autocomplete="new-password" />
+        <button type="submit">Create Account</button>
+        <div id="register-error" class="error-msg" role="alert" aria-live="assertive"></div>
+    </form>
+    <div class="toggle-link" id="show-login"><a href="Account.html">Already have an account? Sign In</a></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+    /* Full screen animation */
+    #animation-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    /* Logo image animation */
+    #logo-img {
+      width: 280px;
+      height: 180px;
+      border-radius: 20%;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeZoom 1.5s ease forwards;
+    }
+
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(0.5); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Text container */
+    #aynova-text {
+      position: relative;
+      display: inline-block;
+      font-family: 'Arial Black', sans-serif;
+      white-space: nowrap;
+    }
+
+    /* Letters */
+    #aynova-text span {
+      font-size: 90px;
+      color: crimson;
+      display: inline-block;
+      opacity: 0;
+      transform: rotate(-360deg) translateY(150px) rotateX(90deg) scale(0.3);
+      animation: swirlBounce 1s forwards;
+    }
+
+    @keyframes swirlBounce {
+      0% {
+        opacity: 0;
+        transform: rotate(-360deg) translateY(150px) rotateX(90deg) scale(0.3);
+      }
+      50% {
+        opacity: 1;
+        transform: rotate(20deg) translateY(-20px) rotateX(20deg) scale(1.05);
+      }
+      70% {
+        transform: rotate(-10deg) translateY(10px) rotateX(10deg) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(0deg) translateY(0) rotateX(0deg) scale(1);
+      }
+    }
+
+    /* Underline animation */
+    #underline {
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      height: 4px;
+      background: crimson;
+      border-radius: 2px;
+      width: 0;
+      animation: underlineGrow 1s forwards;
+    }
+
+    @keyframes underlineGrow {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    /* Main content */
+    #main-content {
+      display: none;
+      min-height: 100vh;
+      background: black;
+      color: white;
+      padding: 40px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+
+

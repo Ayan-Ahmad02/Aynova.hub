@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleurl.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="responsible.css">
+    <title>https://www.Aynova.com</title>
+</head>
+<body>
+        <!-- Payment Modal -->
+<div id="payment-modal">
+    <h2>Unlock Full Site</h2>
+    <p>Scan the QR code below to pay and access all features.</p>
+    <div id="qr-code" style="background-image: url('image.jpg');"></div>
+    <p>Free Trial: <span id="timer"> 02:00 </span></p>
+    <button id="unlock-btn"> I've Paid </button>
+</div> 
+
+    <!-- Animation Screen -->
+<div id="animation-screen"> 
+<!-- Audio Tag -->
+    <audio id="bg-audio">
+    <source src="audio/ambient-piano-logo-165357.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+    </audio> 
+
+    <!-- Logo Image -->
+<img id="logo-img"
+    src="https://static.vecteezy.com/system/resources/previews/011/766/045/non_2x/initial-letter-an-logo-an-stock-letter-logo-design-pro-template-vector.jpg"
+    alt="AYNOVA" width="280" height="180"
+    style="border-radius:20%; position:fixed; top:100px; left:40%;">
+
+    <!-- Heading for animated text -->
+    <h1 id="aynova-text"></h1>
+</div>
+
+<!-- Main Content after animation -->
+    <div class="hdr">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Image's/logoo.jpg" alt="logo">
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button class="searchb">🔍 Search</button>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav_bar">
+            <a href="index.html">Home</a>
+            <a href="#no5">Food</a>
+            <a href="#no6">Hostel</a>
+            <a href="#no4">Music</a>
+            <a href="#no2">Movies</a>
+            <a href="#no3">University</a>
+            <a href="projects.html">Project's</a>
+            <a href="Subscription.html" style="border: solid black 1px; border-radius: 20px; color: goldenrod;">SUBSCRIBE</a>
+        </div>
+        <div class="settings-container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvVX6FFTfuPh-KGlIZO_YIJY3dYt9vS36cXG4Tt8FM98-DgSAgpASiiDdwWo9q_U-KgXc&usqp=CAU" 
+        alt="Settings" id="settingsIcon">
+    <div class="dropdown" id="dropdownMenu">
+        <a href="settingpage/Account.html">Account</a>
+        <a href="settingpage/helpme.html">Help Center</a>
+        <a href="settingpage/contactus.html">Contact Us</a>
+        <a href="settingpage/aboutme.html">About Us</a>
+        <a href="settingpage/information.html">Info</a>
+        <a href="settingpage/Feedback.html">Team/Project/Feedback Info</a>
+    </div>
+    </div>
+
+    </div>
+
+    <!-- Hero Slider with Background Images -->
+<hr>
+    <section class="hero-slider">
+<div class="hero-slides">
+    <!-- Slide 1 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Welcome to University Offers</h1>
+        <p>Explore exclusive deals and scholarships for students.</p>
+        <div class="hero-buttons">
+        <button onclick="window.open('https://aynova.com/university-offers', '_blank')">Learn More</button>
+        </div>
+    </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=1350&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Latest Movies & Stories</h1>
+        <p>Watch trending movies and captivating stories anytime.</p>
+        <div class="hero-buttons">
+        <button onclick="window.open('https://aynova.com/movies', '_blank')">Watch Now</button>
+        </div>
+    </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1350&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Music & Podcasts</h1>
+        <p>Listen to your favorite music and podcasts on the go.</p>
+        <div class="hero-buttons">
+        <button onclick="window.open('https://aynova.com/music', '_blank')">Listen Now</button>
+        </div>
+    </div>
+    </div>
+    <!-- Slide 4 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1350&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Shopping & Fast Shipping</h1>
+        <p>Shop the latest products with quick delivery options.</p>
+        <div class="hero-buttons">
+        <button onclick="window.open('https://aynova.com/shopping', '_blank')">Shop Now</button>
+        </div>
+    </div>
+    </div>
+    <!-- Slide 5 -->
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Food, Hostel & Room Rent Deals</h1>
+        <p>Find the best deals on food, hostels, and room rentals.</p>
+        <div class="hero-buttons">
+        <button onclick="window.open('https://aynova.com/deals', '_blank')">Explore Deals</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- Navigation Dots -->
+<div class="hero-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+    <span class="dot" data-slide="4"></span>
+</div>
+</section>
+
+
+    <!-- Trending Section -->
+<hr>
+<!-- Trending Section -->
+<h4 style="cursor: pointer;" style="color: black; text-align: center;" class="section-title" id="no1"  onclick="window.open('https://www.youtube.com/','_blank');">Trending Content's....</h4>
+<hr>
+<div class="container">
+
+    <!-- Box 1: Dhadak Video -->
+    <div class="box" id="box1">
+        <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/4bMNBPD1RVI"
+            title="Dhadak Song"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="margin-left: 10px;">Dhadak</h3>
+        <p>🛈 Romantic song full of youthful love and heartfelt emotions.</p>
+    </div>
+
+    <!-- Box 2: Wednesday Web Series -->
+    <div class="box" id="box2">
+        <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/Di310WS8zLk"
+            title="Wednesday Web Series Trailer"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="margin-left: 10px;">Wednesday Web Series</h3>
+        <p>🛈 Exciting thriller series with suspenseful twists every episode.</p>
+    </div>
+
+    <!-- Box 3: Hostel Maa Bhawani -->
+    <div class="box" id="box3">
+        <iframe width="100%" height="200"
+            src=""
+            title="Hostel Maa Bhawani"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="margin-left: 10px; color: red;">Hostal Maa Bhawani</h3>
+        <p>🛈 Drama series exploring hostel life and student experiences.</p>
+    </div>
+
+    <!-- Box 4: University Info -->
+    <div class="box" id="box4">
+        <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/kpqMv9Kmvho"
+            title="University Info"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="margin-left: 10px;">University Info</h3>
+        <p>🛈 Insights on admission, fees, courses, and placement opportunities.</p>
+    </div>
+</div>
+
+<hr>
+<!-- Hindi Movies Section -->
+<h4 style="color: black; cursor: pointer; text-align: center;" class="section-title" id="no2" onclick="window.open('https://net2025.cc/home?utm_source=home_page','_blank');" style="cursor: pointer;">▶ Hindi Movie's & story's....
+</h4>
+<hr>
+<div class="container">
+
+    <!-- Stranger Things Trailer -->
+    <div class="box1" id="box5">
+        <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/b9EkMc79ZSU?rel=0&autoplay=0&mute=1"
+            title="Stranger Things" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="margin-left: 10px;">Stranger Things</h3>
+        <p>Exciting sci-fi movie with mystery and supernatural twists.</p>
+    </div>
+
+    <!-- Saiyaara Song -->
+    <div class="box1" id="box6">
+        <iframe width="100%" height="200"
+            src="https://www.youtube.com/embed/BSJa1UytM8w?rel=0&autoplay=0&mute=1"
+            title="Saiyaara Song" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+        <h3 style="color: black; margin-left: 10px;">Saiyaara</h3>
+        <p>Romantic drama exploring love, emotions, and relationships.</p>
+    </div>
+
+    <!-- Fifty Shades of Grey Trailer -->
+    <div class="box1" id="box7">
+        <iframe width="100%" height="200"
+    src="https://www.youtube.com/embed/SfZWFDs0LxA?rel=0&autoplay=1&mute=1"
+    title="Fifty Shades of Grey Official Trailer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+<h3 style="margin-left: 10px;">Fifty Shades of Grey</h3>
+<p>Intense romantic drama exploring passion and complex relationships.</p>
+
+    </div>
+
+    <!-- Panchayat Trailer -->
+    <div class="box1" id="box8">
+        <iframe width="100%" height="200"
+    src="https://www.youtube.com/embed/AHMEtNAZTP4?rel=0&autoplay=1&mute=1"
+    title="Panchayat Season 4 Official Trailer"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
+<h3 style="margin-left: 10px;">Panchayat</h3>
+<p>Light-hearted series depicting rural life and humorous moments.</p>
+
+    </div>
+
+</div>
+
+<hr>
+    <!-- New Containers -->
+    <h4 style="color: black;  text-align: center;" class="section-title" id="no3">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWcplPhtPYz0Oi_HuA877SYYM02Av7KITzXHm_OqXm0aUc-Gizp4HDhFGKZ5UEdXxSKAs&usqp=CAU" alt="university" width="20px" height="20px">Universities of Lucknow info....</h4>
+<hr>    
+    <div class="container">
+    <div class="box2" id="box9" onclick="window.open('https://dsmru.up.nic.in/','_blank');" style="cursor: pointer;">
+        <p> University Info: aktu and all Lucknow University info</p>
+    </div> 
+    <div class="box2" id="box10" onclick="window.open('https://dsmru.up.nic.in/main/User/placement.aspx','_blank');" style="cursor: pointer;">
+        <p> Courses: UG & PG Professional</p>
+    </div> 
+    <div class="box2" id="box11" onclick="window.open('https://dsmru.up.nic.in/main/User/admission_pro.aspx','_blank');" style="cursor: pointer;">
+        <p> Admissions: Admission B.Tech and M.Tech</p>
+    </div> 
+    <div class="box2" id="box12" onclick="window.open('samarth.html','_blank');" style="cursor: pointer;">
+        <p> Results: Samarth portal (All university result portal)</p>
+    </div> 
+    </div>
+
+    <!-- Music Section -->
+<hr>
+<h4 style="color: black; cursor: pointer; text-align: center;" class="section-title" id="no4" onclick="window.open('https://www.spotify.com','_blank');" style="cursor: pointer;"> 🎵 🎵 🎵 Music</h4>
+<hr>
+<div class="container">
+
+    <!-- Bollywood Music -->
+    <div class="box3" id="box13" onclick="window.open('https://gaana.com/genre/bollywood','_blank');" style="cursor: pointer;">
+        <h4 style="color: white; text-align: center; margin-top: 5px;">▶ Bollywood</h4>
+        <audio controls style="margin-top: 170px; margin-left: 4px;">
+            <source src="video/Kesariya Brahmastra 128 Kbps.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Hollywood Music -->
+    <div class="box3" id="box14" onclick="window.open('https://gaana.com/playlist/rounakkesarkar-ddggx-top50hollywood','_blank');" style="cursor: pointer;">
+        <h4 style="color: white; text-align: center; margin-top: 5px;">▶ Hollywood</h4>
+        <audio controls style="margin-top: 170px; margin-left: 4px;">
+            <source src="video/Harry Styles - Love Of My Life.mp3" type="audio/mpeg" >
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Albums -->
+    <div class="box3" id="box15" onclick="window.open('https://gaana.com/genre/bollywood','_blank');" style="cursor: pointer;">
+        <h4 style="color: white; text-align: center; margin-top: 5px;">▶ Albums</h4>
+        <audio controls style="margin-top: 170px; margin-left: 4px;">
+            <source src="video/Ed_Sheeran_-_Shivers_Offblogmedia.com.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Ringtone -->
+    <div class="box3" id="box16" onclick="window.open('https://www.zedge.net/find/ringtones/musical','_blank');" style="cursor: pointer;">
+        <h4 style="color: white; text-align: center; margin-top: 5px;">▶ Ringtone 🎵 </h4>
+        <audio controls style="margin-top: 170px; margin-left: 4px;">
+            <source src="audio/harry_potter_theme.mp3" type="audio/mpeg" style="margin-left: 6px;">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+</div>
+
+<!-- shoping & movie and hostel  -->
+<hr>
+<h4 style="color: black; text-align: center;" class="section-title" id="no5">Shopping & Fast Shipping</h4>
+<hr>
+<div class="container">
+    <div class="box4" id="box17" onclick="window.open('https://www.nykaafashion.com/','_blank');" style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Fashion 
+        <p>Shop the latest fashion trends with Nykaa Fashion – clothing, accessories, and more delivered fast.</p>
+    </div>
+    <div class="box4" id="box18" onclick="window.open('https://www.reliancedigital.in/','_blank');" style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Electronics 
+        <p>Buy electronics, gadgets, and appliances at the best prices from Reliance Digital.</p>
+    </div>
+    <div class="box4" id="box19" onclick="window.open('https://decorsmantra.com/','_blank');" style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Home Decor 
+        <p>Find beautiful home decor items to make your space stylish and welcoming.</p>
+    </div>
+    <div class="box4" id="box20" onclick="window.open('https://blinkit.com/','_blank');" style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ 1-Day Delivery 
+        <p>Get groceries and essentials delivered to your doorstep within 1 day with Blinkit.</p>
+    </div>
+</div>
+
+<!-- Food & grocery container's -->
+<hr>
+<h4 style="color: black; text-align: center;" class="section-title" id="no6">Food, Hostel & Room Rent</h4>
+<hr>
+<div class="container">
+    <div class="box5" id="box21" onclick="window.open('https://www.swiggy.com/restaurants','_blank');" 
+    style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Food Delivery
+        <p>Order food online from your favorite restaurants with Swiggy.</p>
+    </div>
+    <div class="box5" id="box22" onclick="window.open('https://www.expedia.co.in/','_blank');" 
+    style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Hostel Booking 
+        <p>Book hostels at budget-friendly prices for students and travelers.</p>
+    </div>
+    <div class="box5" id="box23" onclick="window.open('https://www.99acres.com/','_blank');" 
+    style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ Room Rent 
+        <p>Find rooms, flats, and rental properties easily on 99acres.</p>
+    </div>
+    <div class="box5" id="box24" onclick="window.open('https://www.magicbricks.com/','_blank');" 
+    style="cursor: pointer; color: white; text-align: center; margin-top: 5px;"> ▶ PG Accommodation 
+        <p>Search for PG accommodations and shared flats with MagicBricks.</p>
+    </div>
+</div>
+
+<!-- chatgpt Ai box container -->
+<hr>
+<h4 style="color: black;  text-align: center;" class="section-title" id="no7">Education/Knowledge App....</h4>
+<hr>
+<div class="container">
+    <div class="box3" id="box25" onclick="window.open('https://www.blackbox.ai/','_blank')"
+        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVbgqvYcZMqyNqjxu3Gl2Jke97NGVzCNUMTvs6aqmO8F1xYYWl95aEFbDYMPbJE4Bgvzw&usqp=CAU'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Blackbox AI – AI-powered coding and learning assistant for developers and students.</p>
+    </div>
+    
+    <div class="box3" id="box26" onclick="window.open('https://gemini.google.com/','_blank')"
+        style="background-image:url('https://www.androidsage.com/wp-content/uploads/2025/07/New-Gemini-Logo-Icon.png'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Google Gemini – AI chatbot for research, knowledge, and productivity.</p>
+    </div>
+    
+    <div class="box3" id="box27" onclick="window.open('https://chatgpt.com/','_blank')"
+        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEdhtS7JXkuzFbozDX32i3q-Z_yhbK9lzQY09UXR4OnaV29za6zXxU-WYmXxUSQruiK0w&usqp=CAU'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>ChatGPT – Learn, ask questions, and get instant knowledge with AI.</p>
+    </div>
+    
+    <div class="box3" id="box28" onclick="window.open('https://copilot.microsoft.com/','_blank')"
+        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlMmgtWmwS2oepb4Rn5Lvjvtk5h6LaghMfXSXvg3zirRj0xETkGXMUSXALZSgp1GwXkaY&usqp=CAU'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Microsoft Copilot – AI assistant for learning, research, and productivity tasks.</p>
+    </div>
+</div>
+
+<!-- website's link to container page  -->
+<hr>
+<h4 style="color: black;  text-align: center;" class="section-title" id="no7">Website's Link....</h4>
+<hr>
+<div class="container">
+    <div class="box3" id="box29" onclick="window.open('https://www.amazon.in' , '_blank')"
+        style="background-image:url('https://www.shutterstock.com/image-photo/palo-alto-california-us-august-600nw-2507295771.jpg'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Online shopping for electronics, fashion & more.</p>
+    </div>
+    
+    <div class="box3" id="box30" onclick="window.open('https://www.flipkart.com' , '_blank')"
+        style="background-image:url('https://media.assettype.com/outlookbusiness/2025-05-13/9aoaj317/flipkart.png?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>India's leading online shopping destination.</p>
+    </div>
+    
+    <div class="box3" id="box31" onclick="window.open('https://www.netflix.com' , '_blank')"
+        style="background-image:url('https://wallpapercat.com/w/full/1/c/7/45971-1422x3072-iphone-hd-netflix-wallpaper-image.jpg'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Watch movies, series, and originals anytime.</p>
+    </div>
+    
+    <div class="box3" id="box32" onclick="window.open('https://www.spotify.com' , '_blank')"
+        style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWA92BPpRKTE0gHM2-Y9b7GyGrrvwBCl-Fx_NVlrLvC0LgkVgoWU0g5pKPVoyXT7lH8cM&usqp=CAU'); background-repeat: no-repeat; background-size: cover; cursor: pointer;">
+        <p>Stream music, podcasts & discover new artists.</p>
+    </div>
+</div>
+<hr>
+
+
+    <!-- Details Section -->
+<section class="details">
+    <h2>Website Details</h2>
+    <p>Our website offers movies, music, university info, food, hostel, shopping, and more — all at one place for easy access and entertainment.</p>
+    <p>Stay tuned for updates and exciting content every week!</p>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Aynova.com | All Rights Reserved</p>
+        <p>Follow us on:
+            <a href="#">Facebook</a> | 
+            <a href="https://instagram.com/ayan_ahmad782">Instagram</a> | 
+            <a href="https://x.com/Ayan_ahmad099?t=oZ7AACerUvI51mXGQpOcag&s=09">Twitter</a>|
+            <a href="https://www.linkedin.com/in/ayan-ahmad3829">Linkedin</a>|
+            <a href="https://github.com/Ayan-Ahmad-90">GitHub</a>
+        </p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

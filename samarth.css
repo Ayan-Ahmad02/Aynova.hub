@@ -1,0 +1,173 @@
+/* samarth.css */
+
+/* Animated gradient background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(-45deg, #000000, #25e3fc, #df5777, #ee4325);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #f0f0f0;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffdd59;
+    padding: 10px;
+    box-shadow: 0 0 15px #ffdd59aa;
+    position: sticky;
+    top: 0;
+    height: 100px;
+    z-index: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-size: 20px;
+    font-family: 'Segoe UI Black', 'Arial Black', sans-serif;
+    text-shadow: 0 0 10px #ffdd59;
+}
+
+/* Container with max width and padding */
+.container {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  perspective: 1200px; /* For 3D effect */
+}
+
+/* University card with 3D and animation */
+.university {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+  border-radius: 20px;
+  padding: 30px 25px 50px;
+  color: #fff;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.6),
+    inset 0 0 40px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* 3D hover effect */
+.university:hover {
+  transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+  box-shadow:
+    0 15px 40px rgba(255, 77, 43, 0.8),
+    inset 0 0 60px rgba(255, 77, 43, 0.3);
+}
+
+/* Dark overlay for text readability */
+.university::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.85) 100%);
+  border-radius: 20px;
+  z-index: 0;
+  transition: background 0.5s ease;
+}
+
+.university:hover::before {
+  background: linear-gradient(180deg, rgba(255,77,43,0.6) 0%, rgba(255,77,43,0.85) 100%);
+}
+
+/* University title */
+.university h2 {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  z-index: 1;
+  text-shadow: 0 0 12px #ff4b2b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Result button */
+.result-btn {
+  position: relative;
+  z-index: 1;
+  background: #ff4b2b;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff4b2baa;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  user-select: none;
+}
+
+.result-btn:hover {
+  background: #fff;
+  color: #ff4b2b;
+  box-shadow: 0 0 25px #ff4b2b;
+  transform: scale(1.1);
+}
+
+/* Background images for each university */
+.dsmnru { background-image: url("universityimage/dsmnru.jpeg"); }
+.kmclu { background-image: url("universityimage/kmclu.jpg"); }
+.aktu { background-image: url("universityimage/AKTU.jpeg"); }
+.integral { background-image: url("universityimage/INTEGRAL.jpeg"); }
+.kgmu { background-image: url("universityimage/KGMU.jpg"); }
+.lkouniv { background-image: url("universityimage/LU.jpg"); }
+.bbd { background-image: url("universityimage/BBD.jpg"); }
+.amity { background-image: url("universityimage/AKTU.jpeg"); }
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  header {
+    font-size: 1.8rem;
+    padding: 20px 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 20px auto 40px;
+  }
+
+  .university {
+    padding: 25px 20px 40px;
+  }
+
+  .university h2 {
+    font-size: 1.5rem;
+  }
+
+  .result-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}

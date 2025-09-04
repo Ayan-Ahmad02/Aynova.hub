@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subscription Payment</title>
+  <link rel="stylesheet" href="subscribe.css" />
+</head>
+<body>
+  <main class="subscription">
+    <header class="subscription__header">
+      <h1>Unlock Premium Features</h1>
+      <p>Pay <strong>₹99</strong> to continue using the site</p>
+      <p>Free trial available till <strong>30th Sept 2025</strong></p>
+    </header>
+
+    <section class="subscription__qr">
+      <!-- QR code image will be set by JS -->
+      <img id="qrCode" alt="QR Code for payment" class="qr-image" src="image.jpg" />
+      <p>Scan the QR code above to complete your payment</p>
+    </section>
+
+    <section class="subscription__methods">
+      <h2>Pay Using</h2>
+      <div class="methods-grid" role="list">
+        <button type="button" class="method-btn" onclick="window.open('image.jpg', '_blank')" role="listitem">PhonePe</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">Google Pay</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">Paytm</button>
+        <button type="button" class="method-btn" onclick="window.open('https://www.amazon.in/amazonpay/home', '_blank')" role="listitem">Amazon Pay</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">UPI</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">Debit Card</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">Credit Card</button>
+        <button type="button" class="method-btn" onclick="window.open('Netbank.html', '_blank')" role="listitem">Net Banking</button>
+        <button type="button" class="method-btn" onclick="window.open('', '_blank')" role="listitem">Other</button>
+      </div>
+    </section>
+
+    <form class="subscription__upload" id="paymentProofForm" enctype="multipart/form-data" novalidate>
+      <label for="payment-proof" class="file-label">Upload Payment Proof</label>
+      <input type="file" id="payment-proof" name="payment-proof" accept="image/*,application/pdf" required />
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <section id="paymentDetails" class="payment-details" aria-live="polite"></section>
+
+    <button class="btn back-btn" aria-label="Back to Home" onclick="window.open('index.html','_blank')">Back to Home</button>
+  </main>
+
+  <script src="subscribe.js"></script>
+</body>
+</html>

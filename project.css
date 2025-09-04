@@ -1,0 +1,106 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body and Background */
+body {
+  background: linear-gradient(135deg, #0b0b0b, #3b0000, #8b0000);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid crimson;
+}
+
+.header h1 {
+  color: crimson;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px #000;
+}
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  background-color: rgba(20, 0, 0, 0.7);
+  border: 1px solid crimson;
+  border-radius: 10px;
+  width: 250px; /* Smaller width */
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px; /* Set uniform height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.project-card h2 {
+  color: crimson;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-card .tech {
+  font-size: 0.8rem;
+  color: #ff6347;
+  margin-bottom: 0.8rem;
+}
+
+.project-card .links a {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.4rem 0.8rem;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid crimson;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.project-card .links a:hover {
+  background-color: crimson;
+  color: #fff;
+}
+
+/* Hover Effect */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px crimson;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 2px solid crimson;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
