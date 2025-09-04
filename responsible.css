@@ -259,6 +259,11 @@
     font-size: 13px;
   }
 
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .box {
     width: 280px;
     height: 190px;
