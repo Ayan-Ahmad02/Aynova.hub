@@ -175,10 +175,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 10px;
-    margin-left: 12%;
+    /* margin-left: 12%; */
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 10px;
+    margin-right: -20px;
+    padding: 0 10px;
   }
 
   iframe {
@@ -221,8 +222,11 @@
 
 /* Mobile Specific - Below 480px */
 @media (max-width: 480px) {
+  body {
+    position: absolute;
+  }
   .hdr {
-    position: sticky;
+    position: fixed;
     gap: 5px;
     padding: 8px;
   }
@@ -256,6 +260,36 @@
 
   .hero-desc {
     font-size: 13px;
+  }
+
+  .box {
+    width: 280px;
+    height: 190px;
+  }
+
+    .box1 {
+    width: 280px;
+    height: 190px;
+  }
+
+    .box2 {
+    width: 280px;
+    height: 190px;
+  }
+
+    .box3 {
+    width: 280px;
+    height: 190px;
+  }
+
+    .box4 {
+    width: 280px;
+    height: 190px;
+  }
+
+    .box5 {
+    width: 280px;
+    height: 190px;
   }
 
   iframe {
