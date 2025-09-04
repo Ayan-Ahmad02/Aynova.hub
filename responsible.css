@@ -261,6 +261,7 @@
 
   .container {
     display: flex;
+    position: fixed;
     flex-direction: column;
   }
 
@@ -316,3 +317,4 @@
   }
 
 }
+
