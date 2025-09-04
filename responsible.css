@@ -1,210 +1,343 @@
-/* ------------------------------
-   Tablet & Mobile Responsive CSS
-   ------------------------------ */
+@media only screen and (max-width: 480px) {
+  /* Container adjustments */
+  .container {
+    width: 95% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    margin: 0 auto !important;
+  }
 
-/* Common Mobile & Tablet Adjustments */
-@media (max-width: 768px) {
+  /* Payment Modal */
+  #payment-modal {
+    width: 90vw !important;
+    max-width: 400px !important;
+    padding: 15px !important;
+    margin: 20px auto !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+  #qr-code {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 15px auto !important;
+    background-size: contain !important;
+  }
+
+  /* Animation Screen */
+  #animation-screen {
+    position: relative !important;
+    width: 100vw !important;
+    height: 220px !important;
+    padding-top: 20px !important;
+    text-align: center !important;
+  }
+  #logo-img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 140px !important;
+    height: auto !important;
+    border-radius: 15% !important;
+    margin: 0 auto 10px auto !important;
+    display: block !important;
+  }
+  #aynova-text {
+    font-size: 1.5rem !important;
+    padding: 0 10px !important;
+  }
 
   /* Header */
   .hdr {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    gap: 10px;
-    background: #111;
-    z-index: 1000;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 10px 5px !important;
   }
 
+  /* Logo in header */
   .hdr .logo img {
-    width: 140px;
-    height: auto;
-    margin-left: 10px;
+    width: 120px !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
   }
 
-  /* Navbar collapses into hamburger */
-  .nav_bar {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    background: #111;
-    padding: 15px 0;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav_bar a {
-    color: white;
-    font-size: 15px;
-    padding: 8px 0;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav_bar.active {
-    display: flex;
-  }
-
-  /* Hamburger Menu Icon */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 26px;
-    color: white;
-    position: absolute;
-    top: 18px;
-    right: 20px;
-  }
-
-  /* Search Bar */
+  /* Search bar */
   .search {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 8px;
+    width: 100% !important;
+    display: flex !important;
+    margin-bottom: 10px !important;
+  }
+  .search input[type="text"] {
+    flex: 1 !important;
+    padding: 8px 10px !important;
+    font-size: 1rem !important;
+    border-radius: 5px 0 0 5px !important;
+    border: 1px solid #ccc !important;
+  }
+  .search button.searchb {
+    padding: 8px 12px !important;
+    font-size: 1rem !important;
+    border-left: none !important;
+    border-radius: 0 5px 5px 0 !important;
+    background-color: #f0c040 !important;
+    color: #000 !important;
+    cursor: pointer !important;
   }
 
-  .search input {
-    width: 80%;
-    padding: 6px;
-    font-size: 14px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+  /* Navigation Bar */
+  .nav_bar {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .nav_bar a {
+    flex: 1 1 45% !important;
+    text-align: center !important;
+    padding: 8px 5px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+    background-color: #eee !important;
+    color: #333 !important;
+    text-decoration: none !important;
+  }
+  .nav_bar a[style] {
+    flex: 1 1 100% !important;
+    border: 1px solid black !important;
+    color: goldenrod !important;
+    font-weight: 600 !important;
   }
 
-  .searchb {
-    padding: 6px 10px;
-    font-size: 14px;
-  }
-
-  /* Settings dropdown */
+  /* Settings container */
   .settings-container {
-    position: relative;
-    margin-top: 10px;
-    margin-left: 10px;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+  #settingsIcon {
+    width: 36px !important;
+    height: 36px !important;
+    cursor: pointer !important;
+    border-radius: 6px !important;
   }
 
+  /* Dropdown menu */
   .dropdown {
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: #111;
-    display: none;
-    flex-direction: column;
-    width: 160px;
-    border-radius: 8px;
-    overflow: hidden;
+    display: none !important;
+    position: absolute !important;
+    top: 45px !important;
+    right: 0 !important;
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    width: 180px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    z-index: 1000 !important;
+    flex-direction: column !important;
   }
-
+  .settings-container.active .dropdown {
+    display: flex !important;
+  }
   .dropdown a {
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    text-align: left;
-    transition: background 0.2s;
+    padding: 10px 12px !important;
+    font-size: 0.9rem !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  .dropdown a:last-child {
+    border-bottom: none !important;
   }
 
-  .dropdown a:hover {
-    background: #222;
+  /* Hero Slider */
+  .hero-slider {
+    width: 100vw !important;
+    max-width: 480px !important;
+    margin: 0 auto 20px auto !important;
+    overflow: hidden !important;
+    border-radius: 12px !important;
+  }
+  .hero-slides {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .hero-slide {
+    min-width: 100% !important;
+    height: 220px !important;
+    position: relative !important;
+    scroll-snap-align: start !important;
+    background-position: center !important;
+    background-size: cover !important;
+    border-radius: 12px !important;
+    color: #fff !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    padding: 15px !important;
+    box-sizing: border-box !important;
+  }
+  .hero-overlay {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+    background: rgba(0,0,0,0.4) !important;
+    border-radius: 12px !important;
+    z-index: 0 !important;
+  }
+  .hero-content {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+  .hero-content h1 {
+    font-size: 1.2rem !important;
+    margin: 0 0 5px 0 !important;
+  }
+  .hero-content p {
+    font-size: 0.9rem !important;
+    margin: 0 0 10px 0 !important;
+  }
+  .hero-buttons button {
+    padding: 8px 14px !important;
+    font-size: 0.9rem !important;
+    background-color: #f0c040 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    color: #000 !important;
   }
 
-  .settings-container:hover .dropdown {
-    display: flex;
+  /* Hero dots */
+  .hero-dots {
+    text-align: center !important;
+    margin-top: 8px !important;
+  }
+  .hero-dots .dot {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    margin: 0 4px !important;
+    background-color: #ccc !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+  }
+  .hero-dots .dot.active {
+    background-color: #f0c040 !important;
   }
 
-  /* Hero Section */
-  .hero-title {
-    font-size: 22px;
-    text-align: center;
-    margin-bottom: 8px;
+  /* Section Titles */
+  .section-title {
+    font-size: 1.1rem !important;
+    margin: 15px 0 10px 0 !important;
+    cursor: pointer !important;
+    color: #000 !important;
+    text-align: center !important;
   }
 
-  .hero-desc {
-    font-size: 14px;
-    padding: 0 12px;
-    text-align: center;
+  /* Boxes inside containers */
+  .box, .box1, .box2, .box3, .box4, .box5 {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1) !important;
+    background: #fff !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+  }
+  .box iframe, .box1 iframe {
+    width: 100% !important;
+    height: 180px !important;
+    border-radius: 8px !important;
+  }
+  .box h3, .box1 h3 {
+    font-size: 1rem !important;
+    margin: 8px 0 4px 0 !important;
+  }
+  .box p, .box1 p {
+    font-size: 0.85rem !important;
+    margin: 0 0 5px 0 !important;
+    color: #333 !important;
   }
 
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
+  /* Audio boxes */
+  .box3 {
+    position: relative !important;
+    height: 220px !important;
+    color: white !important;
+    padding: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    background-size: cover !important;
+    background-position: center !important;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4) !important;
+  }
+  .box3 h4 {
+    margin: 0 0 5px 0 !important;
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+  .box3 audio {
+    width: 100% !important;
+    outline: none !important;
   }
 
-  /* Containers & Boxes */
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    padding: 0 10px;
-  }
-
-  .container .card,
-  .container .box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  iframe {
-    width: 100%;
-    height: 160px;
-    border-radius: 8px;
+  /* Boxes with text only */
+  .box2 p {
+    font-size: 0.9rem !important;
+    margin: 10px 0 !important;
+    color: #000 !important;
   }
 
   /* Footer */
-  .footer-content p {
-    font-size: 13px;
-    text-align: center;
-    padding: 10px;
+  .footer {
+    background-color: #222 !important;
+    color: #ccc !important;
+    text-align: center !important;
+    padding: 15px 10px !important;
+    font-size: 0.85rem !important;
   }
-}
-
-/* Mobile Specific - Below 480px */
-@media (max-width: 480px) {
-
-  .hdr {
-    gap: 5px;
+  .footer a {
+    color: #f0c040 !important;
+    text-decoration: none !important;
+    margin: 0 5px !important;
   }
-
-  .hdr .logo img {
-    width: 120px;
+  .footer a:hover {
+    text-decoration: underline !important;
   }
 
-  .search input {
-    width: 100%;
-    margin-bottom: 8px;
+  /* Smaller screen tweaks */
+  @media (max-width: 360px) {
+    #animation-screen {
+      height: 180px !important;
+    }
+    #logo-img {
+      width: 110px !important;
+    }
+    .hero-slide {
+      height: 180px !important;
+    }
+    .box iframe, .box1 iframe {
+      height: 140px !important;
+    }
+    .box3 {
+      height: 180px !important;
+    }
   }
 
-  .nav_bar a {
-    font-size: 13px;
-    opacity: 0.8;
+  /* Hide horizontal scrollbar on hero slides */
+  .hero-slides::-webkit-scrollbar {
+    display: none !important;
   }
-
-  .hero-title {
-    font-size: 20px;
-  }
-
-  .hero-desc {
-    font-size: 13px;
-  }
-
-  iframe {
-    height: 140px;
-  }
-
-  .footer-content p {
-    font-size: 12px;
+  .hero-slides {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
   }
 }
