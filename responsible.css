@@ -222,12 +222,8 @@
 
 /* Mobile Specific - Below 480px */
 @media (max-width: 480px) {
-  body {
-    margin: 0;
-    padding: 0;
-  }
   .hdr {
-    position: fixed;
+    position: sticky;
     gap: 5px;
     padding: 8px;
   }
@@ -315,4 +311,5 @@
   }
 
 }
+
 
