@@ -6,27 +6,78 @@
 <title>User Account - Aynova</title>
 <link rel="stylesheet" href="account.css" />
 <link rel="stylesheet" href="Animation.css">
+
+<style>
+  /* Disabled button style */
+  .sign-in-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+</style>
 </head>
 <body>
 
 <!-- Login Page -->
 <div id="login-page" class="active" role="main" aria-label="Login form">
-    <div class="container">
+  <div class="container">
     <h2>Sign In to Aynova</h2>
     <form id="login-form" novalidate>
-        <label for="login-email">Email address</label>
-        <input type="email" id="login-email" name="login-email" placeholder="you@example.com"  autocomplete="username" required/>
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" name="login-password" placeholder="Enter your password"  autocomplete="current-password" required/>
-        <button type="submit" class="sign-in-btn" onclick="window.open('profile.html','_blank');">Sign In</button>
-        <button type="submit" class="sign-in-btn" onclick="window.open('index.html','_blank');">ExiT</button>
-        <div id="login-error" class="error-msg" role="alert" aria-live="assertive"></div>
+      <label for="login-email">Email address</label>
+      <input type="email" id="login-email" name="login-email" placeholder="you@example.com" autocomplete="username" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="login-password" placeholder="Enter your password" autocomplete="current-password" required />
+
+      <button type="submit" id="signInBtn" class="sign-in-btn" disabled>Sign In</button>
+      <button type="button" class="sign-in-btn" onclick="window.open('index.html','_blank');">Exit</button>
+
+      <div id="login-error" class="error-msg" role="alert" aria-live="assertive"></div>
     </form>
-    <div class="toggle-link" id="show-register" ><a href="registration.html">New user? Create an account</a></div>
+    <div class="toggle-link" id="show-register">
+      <a href="registration.html">New user? Create an account</a>
     </div>
+  </div>
 </div>
 
+<script>
+  const emailInput = document.getElementById("login-email");
+  const passwordInput = document.getElementById("login-password");
+  const signInBtn = document.getElementById("signInBtn");
+
+  function checkInputs() {
+    if (emailInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+      signInBtn.disabled = false;
+    } else {
+      signInBtn.disabled = true;
+    }
+  }
+
+  // Run check on input
+  emailInput.addEventListener("input", checkInputs);
+  passwordInput.addEventListener("input", checkInputs);
+
+  // On submit → open profile page
+  document.getElementById("login-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent default reload
+    if (!signInBtn.disabled) {
+      window.open("profile.html", "_blank");
+    }
+  });
+    document.getElementById("account-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // values get karna
+  let email = document.getElementById("login-email").value;
+  let password = document.getElementById("login-password").value;
+
+  // localStorage me save karna
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("userPassword", password);
+
+  // profile.html par redirect
+  window.location.href = "profile.html";
+</script>
+
 </body>
-
 </html>
-
