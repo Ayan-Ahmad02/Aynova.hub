@@ -220,12 +220,21 @@
   }
 }
 
+
 /* Mobile Specific - Below 480px */
 @media (max-width: 480px) {
+  /* Header */
   .hdr {
     position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
     gap: 5px;
     padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
   }
 
   .hdr .logo img {
@@ -233,22 +242,47 @@
     height: 50px;
   }
 
+  .search {
+    flex: 1;
+    margin: 0 5px;
+  }
+
   .search input {
     width: 100%;
-    margin-bottom: 8px;
-    margin-left: -9px;
+    padding: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
   }
 
   .searchb {
     display: none;
+  }
+
+  /* Navbar */
+  .nav_bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
-    margin-top: 5px;
+    box-sizing: border-box;
   }
 
   .nav_bar a {
     font-size: 13px;
-    opacity: 0.8;
-    padding: 6px 0;
+    opacity: 0.9;
+    padding: 6px 8px;
+    white-space: nowrap;
+  }
+
+  /* Hero Section */
+  .hero-slide,
+  .hero-title,
+  .hero-desc {
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
   .hero-title {
@@ -259,53 +293,64 @@
     font-size: 13px;
   }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;   
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
+  /* Content Boxes */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-.box,
-.box1,
-.box2,
-.box3,
-.box4,
-.box5 {
-  width: 100%;           
-  max-width: 320px;      
-  height: auto;          
-  margin: 0 auto;        
-  border-radius: 8px;
-  background: #fff;      
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+  .box,
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5 {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+  }
 
-
+  /* Responsive iframe */
   iframe {
+    width: 100%;
     height: 160px;
+    border-radius: 8px;
+  }
+
+  /* Footer */
+  .footer-content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .footer-content p {
     font-size: 12px;
   }
 
+  /* Animation screen */
   #animation-screen {
     font-size: 14px;
   }
 
   #logo-img {
-    width: 250px;
-    margin: 0 -100px;
+    width: 180px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
   }
 
   #aynova-text {
-    font-size: 19px;
+    font-size: 18px;
+    text-align: center;
   }
-
 }
-
-
