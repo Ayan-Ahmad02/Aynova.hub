@@ -8,4 +8,8 @@ document.getElementById("photo-upload").addEventListener("change", function(even
             };
             reader.readAsDataURL(file);
         }
+
 });
+
+document.getElementById("profile-email").value = localStorage.getItem("userEmail");
+document.getElementById("profile-password").value = localStorage.getItem("userPassword");
