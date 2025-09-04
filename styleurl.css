@@ -71,28 +71,28 @@
 }
 
 #box13 {
-    background-image: url("Image's/box13.jpg");
+    background-image: url("box13.jpg");
     background-repeat: no-repeat;
     background-size: cover; /* keeps aspect ratio */
     background-position: center; /* centers the image */
 }
 
 #box14 {
-    background-image: url("Image's/hollywood.jpg");
+    background-image: url("hollywood.jpg");
     background-repeat: no-repeat;
     background-size: 90% 150%;
     background-position: center;
 }
 
 #box15 {
-    background-image: url("Image's/Albums.jpg"); /* Add your album image here */
+    background-image: url("Albums.jpg"); /* Add your album image here */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 #box16 {
-    background-image: url("Image's/harrypotter.jpg"); /* Add your podcast image here */
+    background-image: url("harrypotter.jpg"); /* Add your podcast image here */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -145,4 +145,5 @@
         background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
 
