@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>User Account - Aynova</title>
-<link rel="stylesheet" href="account.css" />
-<link rel="stylesheet" href="Animation.css">
-
-<style>
-  /* Disabled button style */
-  .sign-in-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Account - Aynova</title>
+  <link rel="stylesheet" href="account.css" />
+  <link rel="stylesheet" href="Animation.css">
 </head>
 <body>
 
@@ -45,6 +36,7 @@
   const passwordInput = document.getElementById("login-password");
   const signInBtn = document.getElementById("signInBtn");
 
+  // Inputs check
   function checkInputs() {
     if (emailInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
       signInBtn.disabled = false;
@@ -53,30 +45,26 @@
     }
   }
 
-  // Run check on input
+  // Input event
   emailInput.addEventListener("input", checkInputs);
   passwordInput.addEventListener("input", checkInputs);
 
-  // On submit → open profile page
+  // Submit logic
   document.getElementById("login-form").addEventListener("submit", function(e) {
-    e.preventDefault(); // prevent default reload
+    e.preventDefault();
+
     if (!signInBtn.disabled) {
-      window.open("profile.html", "_blank");
+      let email = emailInput.value;
+      let password = passwordInput.value;
+
+      // localStorage me save
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+
+      // profile.html par redirect
+      window.location.href = "profile.html";
     }
   });
-    document.getElementById("account-form").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  // values get karna
-  let email = document.getElementById("login-email").value;
-  let password = document.getElementById("login-password").value;
-
-  // localStorage me save karna
-  localStorage.setItem("userEmail", email);
-  localStorage.setItem("userPassword", password);
-
-  // profile.html par redirect
-  window.location.href = "profile.html";
 </script>
 
 </body>
