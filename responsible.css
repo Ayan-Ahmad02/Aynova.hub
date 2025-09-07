@@ -331,33 +331,21 @@ css
 Copy code
 /* Hero Section - Fix for mobile full width */
 @media (max-width: 480px) {
-  .hero-slide {
-    width: 100vw;       /* Take full viewport width */
-    height: 100vh;      /* Take full viewport height */
-    margin: 0;          /* Remove extra margin */
-    padding: 0;
-    overflow: hidden;
-    box-sizing: border-box;
-  }
-
-  .hero-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Make image cover full area */
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 22px;
-    text-align: center;
-    padding: 0 8px;
-  }
-
-  .hero-desc {
-    font-size: 14px;
-    text-align: center;
-    padding: 0 8px;
-  }
+/* Hero Section */
+    .hero-slide, .hero-title, .hero-desc 
+    { width: 100%; 
+     margin: 30px; 
+     padding: 8px; 
+     box-sizing: border-box; 
+    } 
+    .hero-title 
+    {
+    font-size: 20px; 
+    } 
+    .hero-desc 
+    { 
+        font-size: 13px; 
+    }
 
   /* Content Boxes */
   .container {
