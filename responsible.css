@@ -349,6 +349,13 @@
   }
 
   /* Footer */
+  .footer {
+    background: black;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+  }
   .footer-content {
     width: 100%;
     padding: 10px;
@@ -377,3 +384,4 @@
     text-align: center;
   }
 }
+
