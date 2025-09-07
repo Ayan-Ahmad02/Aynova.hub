@@ -130,7 +130,7 @@ overflow: hidden;
 }
 
 /* caption at bottom */
-.box p, .box1 p, .box2 p, .box3 p, .box4 p, .box5 p {
+.box p, .box1 p, .box2 p, .box3 p, .box4 p, .box5 p , .box6 p {
 position: absolute;
 left: 12px;
 right: 12px;
@@ -142,5 +142,6 @@ padding: 8px 10px;
 font-weight: 600;
 text-align: center;
 }
+
 
 
