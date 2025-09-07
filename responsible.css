@@ -290,7 +290,7 @@
   .hero-title,
   .hero-desc {
     width: 100%;
-    margin: 0;
+    margin: 20px;
     padding: 8px;
     box-sizing: border-box;
   }
@@ -396,5 +396,6 @@
     text-align: center;
   }
 }
+
 
 
