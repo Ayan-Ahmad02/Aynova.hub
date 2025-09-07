@@ -169,16 +169,11 @@ body {
 
 /* Footer */
 .footer {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding:20px;
-  height: 80px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(0.2px);
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
 }
 
 .footer a {
