@@ -116,7 +116,7 @@ padding: 0 20px;
 }
 
 /* BOX base style - each box is relative so its caption can be absolute bottom */
-.box, .box1, .box2, .box3, .box4, .box5 {
+.box, .box1, .box2, .box3, .box4, .box5 , .box6 {
 position: relative;
 width: 23%;           /* will allow 4 items per row within 1200px */
 min-width: 220px;     /* avoids becoming too small */
@@ -142,4 +142,5 @@ padding: 8px 10px;
 font-weight: 600;
 text-align: center;
 }
+
 
